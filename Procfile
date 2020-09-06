@@ -1,1 +1,1 @@
-web: gunicorn direSonar
+web: gunicorn direSonar.wsg

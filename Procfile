@@ -1,1 +1,1 @@
-web: gunicorn direSonar.wsg
+web: gunicorn direSonar.wsgi

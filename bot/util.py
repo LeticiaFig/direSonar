@@ -20,7 +20,8 @@ def process_message(command):
 
     except Interaction.DoesNotExist:
         output.text = "Comando não encontrado, envie 'ajuda' para receber orientações!"
-        output.hasButton = False
+        output.hasButton = True
+        output.buttons = "Agendamentos, Minha Agenda|Cancelamentos, Ajuda"
 
     return output
 

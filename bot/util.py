@@ -1,5 +1,3 @@
-from json.decoder import JSONArray
-
 import requests, json
 from sqlparse.filters import output
 

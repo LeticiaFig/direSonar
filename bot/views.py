@@ -7,7 +7,7 @@ from .util import send_message, process_message, send_message_onlyText
 from core.models import Interaction
 import json
 import time
-
+import sys
 
 @csrf_exempt
 def event(requests):
@@ -38,7 +38,8 @@ def event(requests):
         output = "Sua consulta foi finalizada!\nDe 1 a 5, o quanto você recomendaria o nosso serviço?"
         send_message_onlyText(chat_id, output)
         time.sleep(300)
-        quit()
+        sys.exit("Error message")
+
     else:
         output = process_message(command)
         send_message(chat_id, output)

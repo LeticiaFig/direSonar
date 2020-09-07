@@ -51,10 +51,8 @@ def send_message(chat_id, output):
 
 def send_message_onlyText(chat_id, text):
     url = 'https://api.telegram.org/bot{0}/sendMessage'.format(TOKEN)
-
     data = {'chat_id': chat_id, 'text':text}
     r = requests.post(url, data=data)
-
     results = r.json()
     print(results)
 

@@ -11,8 +11,12 @@ def event(requests):
     print(requests)
     json_list = json.loads(requests.body)
     print(json_list)
-    chat_id = json_list['message']['chat']['id']
-    command = json_list['message']['text']
+    if "message" in json_list:
+        chat_id = json_list['message']['chat']['id']
+        command = json_list['message']['text']
+    elif "edited_message" in json_list:
+        chat_id = json_list['edited_message']['chat']['id']
+        command = json_list['edited_message']['text']
 
     output = process_message(command)
     send_message(chat_id, output)

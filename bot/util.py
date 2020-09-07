@@ -1,3 +1,5 @@
+from json.decoder import JSONArray
+
 import requests, json
 from sqlparse.filters import output
 
@@ -29,15 +31,15 @@ def send_message(chat_id, output):
     url = 'https://api.telegram.org/bot{0}/sendMessage'.format(TOKEN)
 
     if output.hasButton:
-        preButtons = (output.buttons).split(',')
-        buttons = []
-        for el in preButtons:
-            sub = el.split(', ')
-            buttons.append(sub)
+        preButtons = (output.buttons)
 
-        reply_markup = {"keyboard": buttons, "one_time_keyboard": True}
+        buttons = [preButtons.split(',') for preButtons in preButtons.split('|')]
+        formattedbutton = [[json.loads(json.dumps({'text': btn, "url":"https://9ea17fbbbdeb.ngrok.io/bot/response/"+btn})) for btn in button] for button in buttons]
+
+        reply_markup = {"keyboard": formattedbutton, "one_time_keyboard": True}
         data = {'chat_id': chat_id, 'text': output.text, 'reply_markup': json.dumps(reply_markup)}
         r = requests.get(url, data=data)
+        print(r)
 
     else:
         data = {'chat_id': chat_id, 'text': output.text}

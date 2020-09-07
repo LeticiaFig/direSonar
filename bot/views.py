@@ -37,7 +37,7 @@ def event(requests):
     elif command == "Confirmar":
         output = ""
         output.text = "Consulta agendada com sucesso! Em que mais posso te ajudar?"
-        output.button = "Sim, Não"
+        output.button = "Novo agendamento, Cancelamentos|Ver minha agenda de consultas, Ajuda|Sair"
         send_message(chat_id, output)
         time.sleep(120)
         output.text = "Olá! Você possui uma consulta agendada para o dia 15/09 às 11:00. Posso confirmar?"

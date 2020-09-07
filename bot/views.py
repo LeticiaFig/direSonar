@@ -34,6 +34,7 @@ def event(requests):
         time.sleep(random.randint(1, 60))
         output = "Senha atual: {0}\nSua vez chegou!".format(senha)
         send_message_onlyText(chat_id, output)
+        return HttpResponse()
 
     else:
         output = process_message(command)

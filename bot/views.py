@@ -34,15 +34,6 @@ def event(requests):
         time.sleep(random.randint(1, 60))
         output = "Senha atual: {0}\nSua vez chegou!".format(senha)
         send_message_onlyText(chat_id, output)
-    elif command == "Confirmar":
-        output = "Consulta agendada com sucesso!"
-        send_message_onlyText(chat_id, output)
-        time.sleep(random.randint(1, 30))
-        output = "Olá! Você possui uma consulta agendada para o dia 15/09 às 11:00."
-        send_message_onlyText(chat_id, output)
-        time.sleep(random.randint(1, 45))
-        output = "Olá! Não se esqueça da sua consulta com o Dr Arthur hoje às 11:00. Quando chegar na clínica, clique no botão abaixo escrito “cheguei”"
-        send_message_onlyText(chat_id, output)
 
     else:
         output = process_message(command)

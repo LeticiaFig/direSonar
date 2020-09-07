@@ -37,7 +37,6 @@ def event(requests):
         time.sleep(random.randint(1, 60))
         output = "Sua consulta foi finalizada!\nDe 1 a 5, o quanto você recomendaria o nosso serviço?"
         send_message_onlyText(chat_id, output)
-        time.sleep(300)
         sys.exit("Error message")
 
     else:

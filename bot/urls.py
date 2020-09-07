@@ -5,5 +5,6 @@ from bot import views
 
 urlpatterns = [
     path('event/', views.event, name="event"),
+    path('teste/', views.teste, name="teste"),
 
 ]

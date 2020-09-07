@@ -7,6 +7,7 @@ TOKEN = '1308541770:AAFvpq8721iZLAaCq9Gm3UROwTGRzanZlaM'
 
 
 def process_message(command):
+    output.input = command
     try:
         interaction = Interaction.objects.get(input=command)
         output.hasButton = interaction.hasButton
@@ -48,13 +49,13 @@ def send_message(chat_id, output):
     print(results)
 
 
-def send_message_with_button(chat_id, text, buttons):
+def send_message_onlyText(chat_id, text):
     url = 'https://api.telegram.org/bot{0}/sendMessage'.format(TOKEN)
-    reply_markup = {"keyboard": [buttons], "one_time_keyboard": True}
-    data = {'chat_id': chat_id, 'text': text, 'reply_markup': json.dumps(reply_markup)}
-    r = requests.get(url, data=data)
+
+    data = {'chat_id': chat_id, 'text':text}
+    r = requests.post(url, data=data)
+
     results = r.json()
     print(results)
-
 
 

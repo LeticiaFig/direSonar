@@ -25,13 +25,6 @@ def event(requests):
 
 
 @csrf_exempt
-def res(requests, response):
-    print("ENTROU AQUI")
-
-    return HttpResponse()
-
-
-@csrf_exempt
 def teste(requests):
     print(requests)
     json_list = json.loads(requests.body)

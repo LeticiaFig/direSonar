@@ -3,7 +3,7 @@ from sqlparse.filters import output
 
 from core.models import Interaction
 
-TOKEN = '1308541770:AAEato1C7-Nc7Pkrdn6vNh6ePegrtE48NK0'
+TOKEN = <token>
 
 
 def process_message(command):

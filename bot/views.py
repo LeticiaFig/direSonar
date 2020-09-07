@@ -39,11 +39,11 @@ def event(requests):
         send_message(chat_id, output)
 
     if command == "Confirmar":
-        time.sleep(120)
+        time.sleep(2)
         output.text = "Olá! Você possui uma consulta agendada para o dia 15/09 às 11:00. Posso confirmar?"
         output.button = "Sim, Não"
         send_message(chat_id, output)
-        time.sleep(120)
+        time.sleep(2)
         output.text = "Olá! Não se esqueça da sua consulta com o Dr Arthur hoje às 11:00. Quando chegar na clínica, clique no botão abaixo escrito Cheguei"
         output.button = "Cheguei"
         send_message(chat_id, output)

@@ -21,28 +21,6 @@ def event(requests):
         chat_id = json_list['edited_message']['chat']['id']
         command = json_list['edited_message']['text']
 
-    if command == "Receber direcionamento":
-        senha = random.randint(100, 200)
-        output = "Siga em frente por 10 metros e depois vire a direita e caminhe por mais 3 metros. Em seguida, à sua direita, estarão as cadeiras e à sua esquerda, estará o balcão de atendimento. Sua senha é {0}, a senha atual é {1}. Você receberá mensagens com o andamento da fila.".format(senha, senha-3)
-        send_message_onlyText(chat_id, output)
-        time.sleep(random.randint(1, 3))
-        output = "Senha atual: {0}\nVocê será atendido em breve".format(senha-2)
-        send_message_onlyText(chat_id, output)
-        time.sleep(random.randint(1, 5))
-        output = "Senha atual: {0}\nVocê é o próximo da fila!".format(senha-1)
-        send_message_onlyText(chat_id, output)
-        time.sleep(random.randint(1, 10))
-        output = "Senha atual: {0}\nSua vez chegou!".format(senha)
-        send_message_onlyText(chat_id, output)
-        time.sleep(random.randint(1, 60))
-        output.text = "Sua consulta foi finalizada!\nDe 1 a 5, o quanto você recomendaria o nosso serviço?"
-        output.button = "1,2,3,4,5"
-        send_message(chat_id, output)
-        sys.exit("Error message")
-    else:
-        output = process_message(command)
-        send_message(chat_id, output)
-
     return HttpResponse()
 
 

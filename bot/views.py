@@ -35,9 +35,8 @@ def event(requests):
         output = "Senha atual: {0}\nSua vez chegou!".format(senha)
         send_message_onlyText(chat_id, output)
         time.sleep(random.randint(1, 5))
-        output.text = "Sua consulta foi finalizada!\nDe 1 a 5, o quanto você recomendaria o nosso serviço?"
-        output.button = "1,2,3,4,5"
-        send_message(chat_id, output)
+        output = "Sua consulta foi finalizada!\nDe 1 a 5, o quanto você recomendaria o nosso serviço?"
+        send_message_onlyText(chat_id, output)
         sys.exit("Error message")
     else:
         output = process_message(command)

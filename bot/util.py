@@ -5,7 +5,7 @@ from sqlparse.filters import output
 
 from core.models import Interaction
 
-TOKEN = '1308541770:AAFvpq8721iZLAaCq9Gm3UROwTGRzanZlaM'
+TOKEN = '1308541770:AAH_KomvXIbhdQCGzxSpHBtTdoklm98aSOw'
 
 
 def process_message(command):

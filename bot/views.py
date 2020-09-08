@@ -34,5 +34,5 @@ def teste(requests):
     text = json_list['message']['text']
 
     output = process_message(command)
-    send_message(chat_id, "Deu bom")
+    send_message(chat_id, "ok")
 
